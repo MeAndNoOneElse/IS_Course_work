@@ -1,0 +1,12 @@
+INSERT INTO RentalSpot (Address) VALUES ('ул. Горная, 15 (Курорт Альфа)'), ('ул. Снежная, 42 (Курорт Бета)');
+INSERT INTO InventoryType (Name, Durability) VALUES ('Сноуборд жесткий', INTERVAL '2 years'), ('Лыжи горные', INTERVAL '3 years'), ('Шлем защитный', INTERVAL '5 years');
+INSERT INTO Client (Name, Email, psswrd) VALUES ('Иван Иванов', 'ivan.i@example.com', 'hashed_pass_1'), ('Анна Смирнова', 'anna.s@example.com', 'hashed_pass_2');
+INSERT INTO RepairCenter (Address) VALUES ('Промзона, ангар 4');
+INSERT INTO Opponents (OrgName, Address) VALUES ('SnowRent Competitor', 'ул. Горная, 17');
+INSERT INTO Employee (Name, Position, RentalSpot) VALUES ('Петр Васильев', 'cashier', 1), ('Елена Морозова', 'manager', 2);
+INSERT INTO Inventory (Type, Size, State, Condition, BookingPercent) VALUES (1, 155.0, 'available', 'good', 10.0), (1, 160.0, 'available', 'good', 15.0), (2, 170.0, 'available', 'good', 20.0), (2, 175.0, 'needs_repair', 'damaged', 0.0);
+INSERT INTO InStock (SpotID, InventoryID) VALUES (1, 1), (1, 2), (2, 3), (2, 4);
+INSERT INTO Pricing (InventoryID, SpotID, Price) VALUES (1, 1, 1500.0), (2, 1, 1500.0), (3, 2, 2000.0), (4, 2, 2200.0);
+INSERT INTO Booking (ClientID, InventoryID, BookingStart, BookingEnd, BookingPrice) VALUES (2, 2, '2026-12-10 10:00:00', '2026-12-10 18:00:00', 1500.0);
+INSERT INTO Rent (ClientID, InventoryID, EmployeeID, SpotID, Duration, State, Date) VALUES (1, 1, 1, 1, INTERVAL '4 hours', 'active', CURRENT_DATE);
+UPDATE Inventory SET State = 'rented' WHERE ID = 1;

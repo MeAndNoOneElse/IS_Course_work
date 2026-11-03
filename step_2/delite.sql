@@ -1,0 +1,16 @@
+DROP FUNCTION IF EXISTS get_available_inventory CASCADE;
+DROP FUNCTION IF EXISTS get_available_stock_summary CASCADE;
+DROP PROCEDURE IF EXISTS issue_inventory_for_rent CASCADE;
+DROP PROCEDURE IF EXISTS return_inventory_from_rent CASCADE;
+DROP PROCEDURE IF EXISTS register_inventory_purchase CASCADE;
+DROP TABLE IF EXISTS AddressTo, Notification, Package, Transfer, RepairRequest, Rent, Booking, WriteOff, Purchase, Pricing, InStock, DemandForecast, OpponentPrices, Inventory, Employee, Opponents, RepairCenter, Client, InventoryType, RentalSpot CASCADE;
+DROP TYPE IF EXISTS employee_position_enum CASCADE;
+DROP TYPE IF EXISTS inventory_state_enum CASCADE;
+DROP TYPE IF EXISTS inventory_condition_enum CASCADE;
+DROP TYPE IF EXISTS rent_state_enum CASCADE;
+DROP TYPE IF EXISTS request_status_enum CASCADE;
+DROP TYPE IF EXISTS transfer_status_enum CASCADE;
+DROP TYPE IF EXISTS writeoff_reason_enum CASCADE;
+DROP FUNCTION IF EXISTS trg_validate_booking_fn CASCADE;
+DROP FUNCTION IF EXISTS trg_process_writeoff_fn CASCADE;
+DROP FUNCTION IF EXISTS trg_package_add_item_fn CASCADE;
